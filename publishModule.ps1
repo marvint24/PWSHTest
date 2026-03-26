@@ -11,8 +11,8 @@ if(Get-PSRepository "Gitea" -ErrorAction SilentlyContinue){
 }
 
 Register-PSRepository -Name "Gitea" `
--PublishLocation "$GITEA_URL/api/packages/$OWNER/nuget/index.json" `
--SourceLocation "$GITEA_URL/api/packages/$OWNER/nuget/index.json" `
+-PublishLocation "$GITEA_URL/api/packages/$OWNER/nuget/" `
+-SourceLocation "$GITEA_URL/api/packages/$OWNER/nuget/" `
 -PackageManagementProvider NuGet `
 -InstallationPolicy Trusted
 Publish-Module -Path "." -Repository "Gitea" -NuGetApiKey $TOKEN -Verbose
